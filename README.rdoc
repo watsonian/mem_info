@@ -1,17 +1,26 @@
 = mem_info
 
-Description goes here.
+This is a lightweight library that wraps access to the data in /proc/meminfo found in many linux variants, which contains live memory usage information about a machine.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Getting Started
+
+Install the gem:
+
+ gem install mem_info
+
+Require the library like you would expect:
+
+ require 'mem_info'
+
+Then create a new MemInfo object:
+
+ m = MemInfo.new
+ m.memtotal => 70000
+ m.memfree  => 54300
+ m.memused  => 15700
+
+Take a look in lib/mem_info.rb for all fields that are available.
 
 == Copyright
 
-Copyright (c) 2010 watsonian. See LICENSE for details.
+Copyright (c) 2010 Joel Watson. See LICENSE for details.
