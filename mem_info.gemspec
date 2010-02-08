@@ -23,7 +23,11 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "lib/mem_info.rb"
+     "lib/mem_info.rb",
+     "mem_info.gemspec",
+     "spec/mem_info_spec.rb",
+     "spec/spec.opts",
+     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/watsonian/mem_info}
   s.rdoc_options = ["--charset=UTF-8"]
