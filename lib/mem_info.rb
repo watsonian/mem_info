@@ -43,11 +43,15 @@ class MemInfo
   
   
   def initialize
-    File.open("/proc/meminfo", "r") do |file|
-      data = file.read
-      @@attributes.keys.each do |attribute|
-        instance_variable_set("@#{attribute.to_s}", regex_match(attribute, data).to_i)
+    if File.exists?("/proc/meminfo")
+      File.open("/proc/meminfo", "r") do |file|
+        data = file.read
+        @@attributes.keys.each do |attribute|
+          instance_variable_set("@#{attribute.to_s}", regex_match(attribute, data).to_i)
+        end
       end
+    else
+      raise "This system doesn't have /proc/meminfo data."
     end
   end
   
