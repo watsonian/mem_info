@@ -15,9 +15,10 @@ Require the library like you would expect:
 Then create a new MemInfo object:
 
  m = MemInfo.new
- m.memtotal => 70000
- m.memfree  => 54300
- m.memused  => 15700
+ m.memtotal     => 70000
+ m.memfree      => 54300
+ m.memused      => 15700
+ m.free_buffers => 75000 
 
 Take a look in lib/mem_info.rb for all fields that are available.
 

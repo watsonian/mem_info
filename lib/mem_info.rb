@@ -9,7 +9,8 @@ class MemInfo
   @@attributes = {
     :memtotal       => "MemTotal",
     :memfree        => "MemFree",
-    :buffers        => "Cached",
+    :buffers        => "Buffers",
+    :cached         => "Cached",
     :swapcached     => "SwapCached",
     :active         => "Active",
     :inactive       => "Inactive",
@@ -57,6 +58,10 @@ class MemInfo
   
   def memused
     @memtotal - @memfree
+  end
+
+  def free_buffers
+    @memfree + @buffers + @cached
   end
   
   private
