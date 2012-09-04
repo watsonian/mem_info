@@ -26,7 +26,7 @@ m.memused      => 15700
 m.free_buffers => 75000
 ```
 
-Take a look in lib/mem_info.rb for all fields that are available.
+Take a look in `lib/mem_info.rb` for all fields that are available.
 
 ## Copyright
 
