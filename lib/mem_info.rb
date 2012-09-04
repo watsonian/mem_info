@@ -1,4 +1,6 @@
 class MemInfo
+  class NoProcData < Exception; end
+
   attr_accessor :memtotal, :memfree, :buffers, :cached, :swapcached, :active, :inactive,
                 :active_anon, :inactive_anon, :active_file, :inactive_file, :unevictable,
                 :mlocked, :swaptotal, :swapfree, :dirty, :writeback, :anonpages, :mapped,
@@ -52,7 +54,7 @@ class MemInfo
         end
       end
     else
-      raise "This system doesn't have /proc/meminfo data."
+      raise NoProcData, "This system doesn't have /proc/meminfo data."
     end
   end
   
